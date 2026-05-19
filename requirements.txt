@@ -5,27 +5,29 @@ python-telegram-bot==20.7
 python-dotenv
 
 # ── Image Processing ──────────────────────────────────────────────────────────
-opencv-python
+opencv-python-headless          # headless = no GUI deps, required on Render/Linux servers
 Pillow
 
 # ── AI Captioning (BLIP) ──────────────────────────────────────────────────────
-transformers
-torch
-torchvision
+transformers==4.40.2
+torch==2.2.2
+torchvision==0.17.2
 
 # ── OCR ───────────────────────────────────────────────────────────────────────
-easyocr
+easyocr==1.7.1
 
 # ── Background Removal ────────────────────────────────────────────────────────
-rembg
+rembg[cpu]==2.0.57
 
 # ── Object Detection (YOLOv8) ─────────────────────────────────────────────────
-ultralytics
+ultralytics==8.2.18
 
 # ── Emotion Detection ─────────────────────────────────────────────────────────
-deepface
-tf-keras
+# TensorFlow 2.15 is the last version with broad Python 3.10/3.11 Linux support
+tensorflow==2.15.1
+tf-keras==2.15.1
+deepface==0.0.93
 
 # ── Utilities ─────────────────────────────────────────────────────────────────
-numpy
+numpy==1.26.4
 requests
