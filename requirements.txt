@@ -5,13 +5,14 @@ python-telegram-bot==20.7
 python-dotenv
 
 # ── Image Processing ──────────────────────────────────────────────────────────
-opencv-python-headless          # headless = no GUI deps, required on Render/Linux servers
+opencv-python-headless
 Pillow
 
 # ── AI Captioning (BLIP) ──────────────────────────────────────────────────────
+# Pin transformers to version compatible with torch 2.11 on Python 3.14
 transformers==4.40.2
-torch==2.2.2
-torchvision==0.17.2
+torch==2.11.0
+torchvision==0.26.0
 
 # ── OCR ───────────────────────────────────────────────────────────────────────
 easyocr==1.7.1
@@ -23,8 +24,8 @@ rembg[cpu]==2.0.57
 ultralytics==8.2.18
 
 # ── Emotion Detection ─────────────────────────────────────────────────────────
-# TensorFlow 2.15 is the last version with broad Python 3.10/3.11 Linux support
-tensorflow==2.15.1
+# deepface 0.0.93 + tensorflow-cpu avoids the heavy GPU tensorflow build
+tensorflow-cpu==2.15.1
 tf-keras==2.15.1
 deepface==0.0.93
 

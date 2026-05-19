@@ -1,11 +1,10 @@
 services:
-  - type: worker          # worker = long-running process (no HTTP port needed)
+  - type: worker
     name: ai-vision-bot
     runtime: python
+    pythonVersion: "3.11.9"
     buildCommand: pip install -r requirements.txt
     startCommand: python bot.py
     envVars:
       - key: BOT_TOKEN
-        sync: false       # you'll paste this manually in Render dashboard
-      - key: PYTHON_VERSION
-        value: 3.11.9
+        sync: false
